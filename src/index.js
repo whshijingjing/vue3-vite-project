@@ -1,10 +1,12 @@
 import * as THREE from 'three'
+// 控制器
 import { OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js'
 // 创建场景
 const scene = new THREE.Scene()
+
 // 几何体
 const geometry = new THREE.BoxGeometry(100,100,100)
-// 材质 MeshBasicMaterial不受光照影响
+// 材质(MeshBasicMaterial不受光照影响)
 const material = new THREE.MeshLambertMaterial({
     color: 0x00ffff, //设置材质颜色
     // transparent:true,//开启透明
@@ -42,8 +44,10 @@ directionalLight.target = mesh;
 scene.add(directionalLight);
 
 // 设置透视相机
-const width = window.innerWidth
-const height = window.innerHeight
+// const width = window.innerWidth
+// const height = window.innerHeight
+const width = 800
+const height = 600
 const camera = new THREE.PerspectiveCamera(30, width / height, 1, 3000)
 camera.position.set(292, 223, 185)
 camera.lookAt(0,0,0)
