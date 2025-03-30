@@ -15,17 +15,17 @@
             default: "Hello World"
         }
     });
-
+    let scene:any;
     // 创建场景
-    const scene = new THREE.Scene()
+    scene = new THREE.Scene()
 
     // 几何体
     const geometry = new THREE.BoxGeometry(100,100,100)
     // 材质(MeshBasicMaterial不受光照影响)
     const material = new THREE.MeshLambertMaterial({
         color: 0x00ffff, //设置材质颜色
-        // transparent:true,//开启透明
-        // opacity:0.5,//设置透明度
+        transparent:true,//开启透明
+        opacity:0.5,//设置透明度
     })
     // 网格模型
     const mesh = new THREE.Mesh(geometry,material)
